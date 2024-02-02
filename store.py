@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import mysql.connector
 from tkinter import Tk, Label, Button, Entry, Listbox, messagebox
-#from mdp import PasswordDialog#
+from mdp import PasswordDialog
 import tkinter.simpledialog
 
 class StockManagementApp:
@@ -21,11 +21,11 @@ class StockManagementApp:
         
         self.create_gui()
         
-        #password_dialog = PasswordDialog(root)
-        #if password_dialog.password != "votre_mot_de_passe":
-            #tk.messagebox.showerror("Mot de passe incorrect", "Le mot de passe est incorrect. Fermeture de l'application.")
-            #root.destroy()
-            #return
+        password_dialog = PasswordDialog(root)
+        if password_dialog.password != "1234":
+            tk.messagebox.showerror("Mot de passe incorrect", "Le mot de passe est incorrect. Fermeture de l'application.")
+            root.destroy()
+            return
 
     def create_gui(self):
         self.tree = ttk.Treeview(self.root)
